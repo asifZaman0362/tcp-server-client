@@ -27,6 +27,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "client"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tcp_connection",
+ "tokio",
+]
+
+[[package]]
 name = "hermit-abi"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -43,9 +53,9 @@ checksum = "453ad9f582a441959e5f0d088b02ce04cfe8d51a8eaf077f12ac6d3e94164ca6"
 
 [[package]]
 name = "libc"
-version = "0.2.141"
+version = "0.2.142"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3304a64d199bb964be99741b7a14d26972741915b3649639149b2479bb46f4b5"
+checksum = "6a987beff54b60ffa6d51982e1aa1146bc42f19bd26be28b0586f252fccf5317"
 
 [[package]]
 name = "lock_api"
@@ -188,6 +198,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "server"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tcp_connection",
+ "tokio",
+]
+
+[[package]]
 name = "signal-hook-registry"
 version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -224,9 +244,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "tcp-server-client"
+name = "tcp_connection"
 version = "0.1.0"
 dependencies = [
+ "bytes",
  "serde",
  "serde_json",
  "tokio",
